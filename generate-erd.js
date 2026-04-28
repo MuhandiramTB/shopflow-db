@@ -18,11 +18,11 @@ try {
     execSync('mmdc -i erd-temp.mmd -o thilan-month3-erd.png -t dark -b white --width 2400 --height 1800', {
         stdio: 'inherit'
     });
-    fs.unlinkSync('erd-temp.mmd');
+    if (fs.existsSync('erd-temp.mmd')) fs.unlinkSync('erd-temp.mmd');
     const size = (fs.statSync('thilan-month3-erd.png').size / 1024).toFixed(0);
     console.log(`\nthilan-month3-erd.png generated successfully (${size} KB)`);
 } catch (err) {
-    fs.unlinkSync('erd-temp.mmd');
+    if (fs.existsSync('erd-temp.mmd')) fs.unlinkSync('erd-temp.mmd');
     console.error('ERROR generating PNG:', err.message);
     process.exit(1);
 }
