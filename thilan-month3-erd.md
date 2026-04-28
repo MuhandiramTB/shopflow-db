@@ -91,7 +91,7 @@ erDiagram
 
     inventory {
         int id PK
-        int variant_id FK UK
+        int variant_id FK
         int quantity
         int reserved
         int low_stock_threshold
