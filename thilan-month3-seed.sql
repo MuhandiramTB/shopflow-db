@@ -39,8 +39,8 @@ INSERT INTO categories (id, parent_id, name, slug, sort_order) VALUES
 (14,  1, 'Cameras',        'cameras',         4),
 (15,  1, 'Tablets',        'tablets',         5),
 -- Level 2: Clothing sub
-(16,  2, "Men's Clothing",   'mens-clothing',   1),
-(17,  2, "Women's Clothing", 'womens-clothing', 2),
+(16,  2, 'Men''s Clothing',   'mens-clothing',   1),
+(17,  2, 'Women''s Clothing', 'womens-clothing', 2),
 (18,  2, 'Kids Clothing',    'kids-clothing',   3),
 (19,  2, 'Shoes',            'shoes',           4),
 (20,  2, 'Accessories',      'accessories',     5),
@@ -269,13 +269,13 @@ SELECT
     (ARRAY['pending','confirmed','processing','shipped','delivered',
            'completed','cancelled','refunded'])[
         CASE
-            WHEN n % 100 < 5  THEN 7   -- 5% pending
-            WHEN n % 100 < 8  THEN 8   -- 3% cancelled
-            WHEN n % 100 < 10 THEN 2   -- 2% confirmed
-            WHEN n % 100 < 15 THEN 3   -- 5% processing
+            WHEN n % 100 < 5  THEN 1   -- 5%  pending
+            WHEN n % 100 < 8  THEN 7   -- 3%  cancelled
+            WHEN n % 100 < 10 THEN 2   -- 2%  confirmed
+            WHEN n % 100 < 15 THEN 3   -- 5%  processing
             WHEN n % 100 < 25 THEN 4   -- 10% shipped
             WHEN n % 100 < 40 THEN 5   -- 15% delivered
-            WHEN n % 100 < 41 THEN 9   -- 1% refunded
+            WHEN n % 100 < 41 THEN 8   -- 1%  refunded
             ELSE 6                      -- 59% completed
         END
     ],

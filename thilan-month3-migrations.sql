@@ -522,7 +522,7 @@ SELECT
 FROM category_tree ct
 LEFT JOIN products p  ON p.category_id = ct.id AND p.is_active = true
 LEFT JOIN products p2 ON p2.category_id = ANY(ct.path) AND p2.is_active = true
-GROUP BY ct.id, ct.full_path, ct.depth
+GROUP BY ct.id, ct.full_path, ct.depth, ct.path
 ORDER BY ct.path;
 
 -- Query 8: User purchase history with running total
@@ -544,7 +544,7 @@ SELECT
     )               AS order_number_seq
 FROM orders o
 JOIN order_items oi ON o.id = oi.order_id
-WHERE o.user_id = :user_id          -- replace with actual user id
+WHERE o.user_id = 1                 -- example user id
   AND o.status != 'cancelled'
 GROUP BY o.id, o.order_number, o.status, o.total_amount, o.created_at, o.user_id
 ORDER BY o.created_at DESC;
