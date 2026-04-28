@@ -1,0 +1,23 @@
+{
+  "name": "shopflow-db",
+  "version": "1.0.0",
+  "description": "**Month 3 | Author: Thilan Buddhika**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MuhandiramTB/shopflow-db.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MuhandiramTB/shopflow-db/issues"
+  },
+  "homepage": "https://github.com/MuhandiramTB/shopflow-db#readme",
+  "dependencies": {
+    "pg": "^8.20.0"
+  }
+}
